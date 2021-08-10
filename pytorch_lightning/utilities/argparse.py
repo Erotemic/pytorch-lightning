@@ -231,7 +231,7 @@ def add_argparse_args(
             arg_kwargs.update(nargs="?", const=True)
             # if the only arg type is bool
             if len(arg_types) == 1:
-                use_type: Callable[[str], Union[bool, int, float, str]] = str_to_bool
+                use_type: Callable[[str], Union[bool, int, float, str, None]] = str_to_bool
             elif int in arg_types:
                 use_type = str_to_bool_or_int
             elif str in arg_types:
